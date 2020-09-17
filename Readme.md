@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Илона Шишхова](https://up.htmlacademy.ru/javascript/21/user/1550703).
-* Наставник: Андрей Столпнер
+* Наставник: `Неизвестно`.
 
 ---
 
