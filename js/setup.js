@@ -84,11 +84,15 @@ var renderWizardList = function (wizardList) {
   return fragment;
 };
 
+var showWizardList = function () {
+  var wizardList = generateWizardList();
+  similarListElement.appendChild(renderWizardList(wizardList));
+  userDialog.querySelector(`.setup-similar`).classList.remove(`hidden`);
+};
+
 var userDialog = removeHidden();
 var similarListElement = userDialog.querySelector(`.setup-similar-list`);
 var similarWizardTemplate = document.querySelector(`#similar-wizard-template`)
   .content
   .querySelector(`.setup-similar-item`);
-var wizardList = generateWizardList();
-similarListElement.appendChild(renderWizardList(wizardList));
-userDialog.querySelector(`.setup-similar`).classList.remove(`hidden`);
+showWizardList();
