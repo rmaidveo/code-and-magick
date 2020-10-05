@@ -101,7 +101,13 @@ var similarWizardTemplate = document.querySelector(`#similar-wizard-template`)
   .content
   .querySelector(`.setup-similar-item`);
 
+<<<<<<< HEAD
 showWizardList();
+=======
+removeHidden();
+showWizardList();
+
+>>>>>>> 761865e... diff color and op-close wind
 //  Открытие/закрытие окна настройки персонажа  //
 var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
@@ -110,7 +116,11 @@ var username = document.querySelector('input[name=username]');
 
 var onPopupEscPress = function (evt) {
   if (username === document.activeElement) {
+<<<<<<< HEAD
     evt.stopPropagation();
+=======
+    evt.preventDefault();
+>>>>>>> 761865e... diff color and op-close wind
   } else {
     if (evt.key === 'Escape') {
       closePopup();
@@ -119,16 +129,31 @@ var onPopupEscPress = function (evt) {
 };
 
 var openPopup = function () {
+<<<<<<< HEAD
   removeHidden();
+=======
+  setup.classList.remove('hidden');
+
+>>>>>>> 761865e... diff color and op-close wind
   document.addEventListener('keydown', onPopupEscPress);
 };
 
 var closePopup = function () {
   setup.classList.add('hidden');
+<<<<<<< HEAD
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
 setupOpen.addEventListener('click', openPopup);
+=======
+
+  document.removeEventListener('keydown', onPopupEscPress);
+};
+
+setupOpen.addEventListener('click', function () {
+  openPopup();
+});
+>>>>>>> 761865e... diff color and op-close wind
 
 setupOpen.addEventListener('keydown', function (evt) {
   if (evt.key === 'Enter') {
@@ -136,7 +161,13 @@ setupOpen.addEventListener('keydown', function (evt) {
   }
 });
 
+<<<<<<< HEAD
 setupClose.addEventListener('click', closePopup);
+=======
+setupClose.addEventListener('click', function () {
+  closePopup();
+});
+>>>>>>> 761865e... diff color and op-close wind
 
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.key === 'Enter') {
@@ -149,6 +180,7 @@ var coatWizard = setupWizard.querySelector('.wizard-coat');
 var eyesWizard = setupWizard.querySelector('.wizard-eyes');
 var fireBallWizard = document.querySelector('.setup-fireball-wrap');
 
+<<<<<<< HEAD
 var onChangeColor = function (colors, element, i) {
   var color = getRandomItem(colors);
   if (element.tagName === 'DIV') {
@@ -170,3 +202,32 @@ eyesWizard.addEventListener('click', function () {
 fireBallWizard.addEventListener('click', function () {
   onChangeColor(FIREBALL_COLOR, fireBallWizard, 'fireball');
 });
+=======
+var getColorCoat = function () {
+  coatWizard.addEventListener('click', function () {
+    var color = getRandomItem(COAT_COLOR);
+    coatWizard.style.fill = color;
+    document.querySelector('input[name=coat-color]').value = color;
+  });
+};
+
+var getColorEyes = function () {
+  eyesWizard.addEventListener('click', function () {
+    var color = getRandomItem(EYES_COLOR);
+    eyesWizard.style.fill = color;
+    document.querySelector('input[name=eyes-color]').value = color;
+  });
+};
+
+var getColorFireBall = function () {
+  fireBallWizard.addEventListener('click', function () {
+    var color = getRandomItem(FIREBALL_COLOR);
+    fireBallWizard.style.backgroundColor = color;
+    document.querySelector('input[name=fireball-color]').value = color;
+  });
+};
+
+getColorCoat();
+getColorEyes();
+getColorFireBall();
+>>>>>>> 761865e... diff color and op-close wind
