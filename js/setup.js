@@ -35,13 +35,6 @@ var EYES_COLOR = [
   'yellow',
   'green'
 ];
-var FIREBALL_COLOR = [
-  '#ee4830',
-  '#30a8ee',
-  '#5ce6c0',
-  '#e848d5',
-  '#e6e848'
-];
 
 var removeHidden = function () {
   userDialog.classList.remove(`hidden`);
