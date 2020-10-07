@@ -35,11 +35,16 @@ var EYES_COLOR = [
   'yellow',
   'green'
 ];
+var FIREBALL_COLOR = [
+  '#ee4830',
+  '#30a8ee',
+  '#5ce6c0',
+  '#e848d5',
+  '#e6e848'
+];
 
 var removeHidden = function () {
-  var userDialog = document.querySelector(`.setup`);
   userDialog.classList.remove(`hidden`);
-  return userDialog;
 };
 
 var getRandomNumber = function (min, max) {
@@ -90,9 +95,11 @@ var showWizardList = function () {
   userDialog.querySelector(`.setup-similar`).classList.remove(`hidden`);
 };
 
-var userDialog = removeHidden();
+var userDialog = document.querySelector(`.setup`);
 var similarListElement = userDialog.querySelector(`.setup-similar-list`);
 var similarWizardTemplate = document.querySelector(`#similar-wizard-template`)
   .content
   .querySelector(`.setup-similar-item`);
+
+removeHidden();
 showWizardList();
